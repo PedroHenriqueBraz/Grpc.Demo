@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+service Customers {
+	rpc GetCustomerInfor (CustomerModelRequest) returns (CustomerModel);
+	rpc GetCustomers (CustomersRequest) returns (stream CustomerModel);
+}
+message CustomersRequest{
+
+}
+message CustomerModelRequest {
+	int32 userId = 1;
+}
+
+message CustomerModel {
+	string name = 1;
+	int32 age = 2;
+	bool isActive = 3;
+}

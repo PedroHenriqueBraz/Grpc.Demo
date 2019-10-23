@@ -34,6 +34,7 @@ namespace Server
             {
                 endpoints.MapGrpcService<GreeterService>();
                 endpoints.MapGrpcService<CustomersService>();
+                endpoints.MapGrpcService<WeatherService>();
 
                 endpoints.MapGet("/", async context =>
                 {
